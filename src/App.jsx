@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CityWeather from './CityWeather';
 import Recommendations from './assets/Recommendation';
@@ -6,7 +6,7 @@ import './styles.css';
 import logo from '../public/logo.png'
 
 const App = () => {
-  const [cities, setCities] = useState([]);
+  const [cities, setCities] = useState(['delhi', 'Mumbai', 'Gurgaon']);
   const [cityInput, setCityInput] = useState('');
   const [weatherData, setWeatherData] = useState([]);
 
@@ -20,7 +20,11 @@ const App = () => {
       setCityInput('');
     }
   };
-console.log(cities)
+
+  useEffect(()=>{
+    fetchWeatherData()
+  })
+
   const fetchWeatherData = async () => {
     const responses = await Promise.all(
       cities.map(async (city) => {
