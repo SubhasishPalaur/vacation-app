@@ -47,7 +47,7 @@ const App = () => {
   return (
     <div className="App">
       <header className='header-logo'>
-      <h1 style={{'margin': '0'}}>Vacation Weather App</h1>
+      <h1 style={{'margin': '0'}}>Best Vacation App</h1>
       <img src={logo} style={{
     height: '40px',
     width: '40px'
